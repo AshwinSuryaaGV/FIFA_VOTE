@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIFA Fan Vote</title>
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"></head>
+
+<body>
+    <h1>WORLD CUP FIFA FINALE 2026</h1>
+<h2>
+       Guess & Vote Who's gonna win this time!!
+</h2>
+<div class="teams">
+    <div class="team left">
+        <h2>TEAM</h2>
+        <h1>SPAIN</h1>
+    </div>
+
+    <div class="team right">
+        <h2>TEAM</h2>
+        <h1>ARGENTINA</h1>
+    </div>
+</div>
+<div class="vote-section">
+
+    <!-- Spain -->
+    <div class="vote-card">
+<img src="{{ url_for('static', filename='spain.jpg') }}">        <h2>Spain</h2>
+
+        <p class="votes">
+            Votes:
+<span id="spainVotes">{{ spainVotes }}</span>        </p>
+
+        <button id="spainBtn" onclick="vote('spain')">
+            ❤️ Support Spain
+        </button>
+    </div>
+
+    <!-- Argentina -->
+    <div class="vote-card">
+<img src="{{ url_for('static', filename='argentina.jpg') }}">        <h2>Argentina</h2>
+
+        <p class="votes">
+            Votes:
+<span id="argVotes">{{ argVotes }}</span>
+        <button id="argBtn" onclick="vote('argentina')">
+            💙 Support Argentina
+        </button>
+    </div>
+
+</div>
+</html>
+
+<div class="livePoll">
+    <h3>Votes Left: <span id="votesLeft">{{ votesLeft }}</span>
+
+</div>
+<div class="prediction-poll">
+
+    <h3>🏆 Fan Prediction</h3>
+
+   <div class="poll-container">
+
+    <div id="spainSide" class="poll-spain">
+        <span id="spainPercent">50%</span>
+    </div>
+
+    <div id="argSide" class="poll-arg">
+        <span id="argPercent">50%</span>
+    </div>
+
+</div>
+
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script></body>
+</html>
