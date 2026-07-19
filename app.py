@@ -5,10 +5,13 @@ app = Flask(__name__)
 
 # ---------------- MySQL Configuration ----------------
 
-app.config["MYSQL_HOST"] = "localhost"
-app.config["MYSQL_USER"] = "root"
-app.config["MYSQL_PASSWORD"] = "groot"      # Change if needed
-app.config["MYSQL_DB"] = "fifa_vote"
+import os
+
+app.config["MYSQL_HOST"] = os.getenv(mysql.railway.internal)
+app.config["MYSQL_PORT"] = int(os.getenv(3306, 3306))
+app.config["MYSQL_USER"] = os.getenv(root)
+app.config["MYSQL_PASSWORD"] = os.getenv(ZiPXKVwfPvKJHwMFvYlntaHrjluibPLF)
+app.config["MYSQL_DB"] = os.getenv(railway)
 
 mysql = MySQL(app)
 
